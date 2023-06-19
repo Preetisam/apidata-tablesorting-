@@ -9,13 +9,16 @@ function App() {
       .then(data => setList(data));
   }, []);
 
+  const handleSort = () => {
+    const sortedData = [...list].sort((a, b) => a.id.localeCompare(b.id));
+    setList(sortedData);
+  };
+
   return (
-<>
-    <button onClick={handleSort}> Sort button</button>
     <table>
       <thead>
         <tr>
-        
+          <th onClick={handleSort}>sort</th>
           <th>userId</th>
           <th>id</th>
           <th>title</th>
@@ -33,7 +36,6 @@ function App() {
         ))}
       </tbody>
     </table>
-    </>
   );
 }
 
