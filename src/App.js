@@ -30,10 +30,10 @@ function App() {
       <tbody>
         {list.map(id => (
           <tr key={id.id}>
-            <td>{item.userId}</td>
-            <td>{item.id}</td>      
-            <td>{item.title}</td>      
-            <td>{item.body}</td>      
+            <td>{id.userId}</td>
+            <td>{id.id}</td>      
+            <td>{id.title}</td>      
+            <td>{id.body}</td>      
           </tr>
         ))}
       </tbody>
