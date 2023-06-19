@@ -9,7 +9,7 @@ function App() {
       .then(data => setList(data));
   }, []);
   const handleSort = () => {
-    const sortedData = [...list].sort((a, b) => a.title.localeCompare(b.title));
+    const sortedData = [...list].sort((a, b) => a.id.localeCompare(b.id));
     setList(sortedData);
   };
 
