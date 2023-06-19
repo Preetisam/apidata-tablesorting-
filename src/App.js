@@ -15,10 +15,12 @@ function App() {
   };
 
   return (
+    <>
+    <button onClick={handleSort}> sorting ascending</button>
     <table>
       <thead>
         <tr>
-          <th onClick={handleSort}>sort</th>
+         
           <th>userId</th>
           <th>id</th>
           <th>title</th>
@@ -36,6 +38,7 @@ function App() {
         ))}
       </tbody>
     </table>
+    </>
   );
 }
 
