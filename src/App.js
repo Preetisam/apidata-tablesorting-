@@ -4,29 +4,42 @@ function App() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    fetch('https://myapi.com/data')
+    fetch('https://jsonplaceholder.typicode.com/posts')
       .then(res => res.json())
       .then(data => setList(data));
   }, []);
+  const handleSort = () => {
+    const sortedData = [...list].sort((a, b) => a.title.localeCompare(b.title));
+    setList(sortedData);
+  };
+
 
   return (
+<>
+    <button onClick={handleSort}> Sort button</button>
     <table>
       <thead>
         <tr>
-          <th>Column 1</th>
-          <th>Column 2</th>
+        
+          <th>userId</th>
+          <th>id</th>
+          <th>title</th>
+          <th>body</th>
         </tr>      
       </thead>
       <tbody>
         {list.map(item => (
           <tr key={item.id}>
-            <td>{item.column1}</td>
-            <td>{item.column2}</td>      
+            <td>{item.userId}</td>
+            <td>{item.id}</td>      
+            <td>{item.title}</td>      
+            <td>{item.body}</td>      
           </tr>
         ))}
       </tbody>
     </table>
+    </>
   );
 }
 
-export default App;
+export default App; 
