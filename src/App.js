@@ -28,8 +28,8 @@ function App() {
         </tr>      
       </thead>
       <tbody>
-        {list.map(item => (
-          <tr key={item.id}>
+        {list.map(id => (
+          <tr key={id.id}>
             <td>{item.userId}</td>
             <td>{item.id}</td>      
             <td>{item.title}</td>      
