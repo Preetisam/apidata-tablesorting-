@@ -10,7 +10,7 @@ function App() {
   }, []);
 
   const handleSort = () => {
-    const sortedData = [...list].sort((a, b) => a.id.localeCompare(b.id));
+    const sortedData = [...list].sort((b, a) => a.id.localeCompare(b.id));
     setList(sortedData);
   };
 
