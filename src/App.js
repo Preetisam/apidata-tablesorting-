@@ -8,11 +8,6 @@ function App() {
       .then(res => res.json())
       .then(data => setList(data));
   }, []);
-  const handleSort = () => {
-    const sortedData = [...list].sort((a, b) => a.id.localeCompare(b.id));
-    setList(sortedData);
-  };
-
 
   return (
 <>
@@ -42,4 +37,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;
